@@ -19,10 +19,50 @@ set(SOURCE_FILES
         MainWindow.cpp
         Processor.cpp
         Processor.h
-        Command.h
         RegisterWidget.cpp
         RegisterWidget.h
         register.ui
+        commands/Command.cpp
+        commands/Command.h
+        commands/CommandADD.cpp
+        commands/CommandADD.h
+        commands/CommandAND.cpp
+        commands/CommandAND.h
+        commands/CommandCMP.cpp
+        commands/CommandCMP.h
+        commands/CommandDIV.cpp
+        commands/CommandDIV.h
+        commands/CommandIN.cpp
+        commands/CommandIN.h
+        commands/CommandJGT.cpp
+        commands/CommandJGT.h
+        commands/CommandJLT.cpp
+        commands/CommandJLT.h
+        commands/CommandJMP.cpp
+        commands/CommandJMP.h
+        commands/CommandJZ.cpp
+        commands/CommandJZ.h
+        commands/CommandLOAD.cpp
+        commands/CommandLOAD.h
+        commands/CommandMOV.cpp
+        commands/CommandMOV.h
+        commands/CommandMUL.cpp
+        commands/CommandMUL.h
+        commands/CommandNOT.cpp
+        commands/CommandNOT.h
+        commands/CommandOR.cpp
+        commands/CommandOR.h
+        commands/CommandOUT.cpp
+        commands/CommandOUT.h
+        commands/CommandSET.cpp
+        commands/CommandSET.h
+        commands/CommandSTORE.cpp
+        commands/CommandSTORE.h
+        commands/CommandSUB.cpp
+        commands/CommandSUB.h
+        commands/CommandXOR.cpp
+        commands/CommandXOR.h
+        commands/DecodeException.h
         )
 
 add_executable(schoty ${SOURCE_FILES})
