@@ -24,7 +24,7 @@
 Command* Command::decode(uint8_t first, uint8_t second) throw(DecodeException) {
     uint8_t op = first >> 4;
     uint8_t firstLO = first & 0xfu;
-    uint8_t secondLO = first & 0xfu;
+    uint8_t secondLO = second & 0xfu;
     switch (op) {
         case 1:
             // SET [R] [value]
