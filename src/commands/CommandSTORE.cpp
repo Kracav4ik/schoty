@@ -2,5 +2,5 @@
 #include "Processor.h"
 
 void CommandSTORE::apply(Processor& pro) {
-    pro.memory[pro.registers[addrR]] = pro.registers[reg];
+    pro.setMem(static_cast<uint8_t>(pro.getReg(addrR)), pro.getReg(reg));
 }

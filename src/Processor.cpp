@@ -38,3 +38,19 @@ void Processor::reset() {
     commandOffset = 0;
     nextCommandOffset = 0;
 }
+
+int8_t Processor::getReg(uint8_t reg) {
+    return registers[reg];
+}
+
+void Processor::setReg(uint8_t reg, int8_t val) {
+    registers[reg] = val;
+}
+
+int8_t Processor::getMem(uint8_t addr) {
+    return memory[addr];
+}
+
+void Processor::setMem(uint8_t addr, int8_t val) {
+    memory[addr] = val;
+}

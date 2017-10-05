@@ -2,5 +2,5 @@
 #include "Processor.h"
 
 void CommandXOR::apply(Processor& pro) {
-    pro.registers[toReg] = pro.registers[toReg] ^ pro.registers[fromReg];
+    pro.setReg(toReg, pro.getReg(toReg) ^ pro.getReg(fromReg));
 }

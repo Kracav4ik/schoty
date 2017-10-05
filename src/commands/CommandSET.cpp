@@ -2,5 +2,5 @@
 #include "Processor.h"
 
 void CommandSET::apply(Processor& pro) {
-    pro.registers[reg] = value;
+    pro.setReg(reg,  value);
 }

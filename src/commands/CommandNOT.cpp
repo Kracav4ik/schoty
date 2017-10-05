@@ -2,5 +2,5 @@
 #include "Processor.h"
 
 void CommandNOT::apply(Processor& pro) {
-    pro.registers[toReg] = ~pro.registers[toReg];
+    pro.setReg(toReg, ~pro.getReg(toReg));
 }

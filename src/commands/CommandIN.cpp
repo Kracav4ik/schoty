@@ -3,5 +3,5 @@
 #include "IOManager.h"
 
 void CommandIN::apply(Processor& pro) {
-    pro.memory[pro.registers[addrR]] = IOManager::get()->readInput();
+    pro.setMem(static_cast<uint8_t>(pro.getReg(addrR)), IOManager::get()->readInput());
 }

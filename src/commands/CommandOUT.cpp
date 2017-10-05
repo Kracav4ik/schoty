@@ -3,5 +3,5 @@
 #include "IOManager.h"
 
 void CommandOUT::apply(Processor& pro) {
-    IOManager::get()->writeOutput(pro.memory[pro.registers[addrR]]);
+    IOManager::get()->writeOutput(pro.getMem(static_cast<uint8_t>(pro.getReg(addrR))));
 }

@@ -2,5 +2,5 @@
 #include "Processor.h"
 
 void CommandLOAD::apply(Processor& pro) {
-    pro.registers[reg] = pro.memory[pro.registers[addrR]];
+    pro.setReg(reg, pro.getMem(static_cast<uint8_t>(pro.getReg(addrR))));
 }

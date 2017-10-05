@@ -2,7 +2,7 @@
 #include "Processor.h"
 
 void CommandJLT::apply(Processor& pro) {
-    if (pro.registers[checkReg] < 0) {
+    if (pro.getReg(checkReg) < 0) {
         pro.nextCommandOffset = addr;
     }
 }
