@@ -72,7 +72,7 @@ void MainWindow::on_stepButton_clicked() {
     try {
         pro.step();
     } catch (const DecodeException& e) {
-        textOutput->appendPlainText(QString("*** %s\n").arg(e.getMsg()));
+        textOutput->appendPlainText(QString("*** %1\n").arg(e.getMsg()));
     }
     updateUi();
 }
