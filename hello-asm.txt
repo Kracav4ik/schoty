@@ -1,0 +1,10 @@
+  SET R0 1
+  SET R1 &"Hello, world!\n"
+loop:
+  LOAD R2, R1
+  JZ R2 :end
+  OUT R1
+  ADD R0, R1
+  JMP :loop
+end:
+  STOP
