@@ -2,5 +2,5 @@
 #include "Processor.h"
 
 void CommandSTORE::apply(Processor& pro) {
-    pro.memory[addr] = pro.registers[reg];
+    pro.memory[pro.registers[addrR]] = pro.registers[reg];
 }

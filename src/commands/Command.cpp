@@ -24,21 +24,26 @@
 Command* Command::decode(uint8_t first, uint8_t second) throw(DecodeException) {
     uint8_t op = first >> 4;
     uint8_t firstLO = first & 0xfu;
+    uint8_t secondLO = first & 0xfu;
     switch (op) {
         case 1:
             // SET [R] [value]
             return new CommandSET(firstLO, static_cast<int8_t>(second));
-        case 2:
-            // LOAD [R] [addr]
-            return new CommandLOAD(firstLO, second);
-        case 3:
-            // STORE [R] [addr]
-            return new CommandSTORE(firstLO, second);
+        case 2: {
+            // LOAD [R] [addrR]
+            uint8_t addrR = secondLO;
+            return new CommandLOAD(firstLO, addrR);
+        }
+        case 3: {
+            // STORE [R] [addrR]
+            uint8_t addrR = secondLO;
+            return new CommandSTORE(firstLO, addrR);
+        }
         case 4: {
             // [binop] [fromR] [toR]
             uint8_t binop = firstLO;
             uint8_t fromR = second >> 4;
-            uint8_t toR = second & 0xfu;
+            uint8_t toR = secondLO;
             switch (binop) {
                 case 1:
                     // MOV [fromR] [toR]
@@ -74,13 +79,14 @@ Command* Command::decode(uint8_t first, uint8_t second) throw(DecodeException) {
         case 5: {
             // IO [IN/OUT] [addr]
             uint8_t inout = firstLO;
+            uint8_t addrR = secondLO;
             switch (inout) {
                 case 1:
                     // IN [addr]
-                    return new CommandIN(second);
+                    return new CommandIN(addrR);
                 case 2:
                     // OUT [addr]
-                    return new CommandOUT(second);
+                    return new CommandOUT(addrR);
                 default:
                     throw DecodeException(QString("Invalid IN/OUT mode %1").arg(inout));
             }
@@ -88,7 +94,7 @@ Command* Command::decode(uint8_t first, uint8_t second) throw(DecodeException) {
         case 6: {
             // CMP [outR] [aR] [bR]
             uint8_t aR = second >> 4;
-            uint8_t bR = second & 0xfu;
+            uint8_t bR = secondLO;
             return new CommandCMP(firstLO, aR, bR);
         }
         case 7:

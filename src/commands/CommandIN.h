@@ -4,9 +4,9 @@
 
 class CommandIN : public Command {
 private:
-    uint8_t addr;
+    uint8_t addrR;
 public:
-    explicit CommandIN(uint8_t addr) : addr(addr) {}
+    explicit CommandIN(uint8_t addrR) : addrR(addrR) {}
 
     void apply(Processor& pro) override;
 };
