@@ -12,10 +12,14 @@ public:
 
     int8_t registers[REG_COUNT];
     int8_t memory[MEM_SIZE];
-    uint8_t commandOffset = 0;
-    uint8_t nextCommandOffset = 0;
+    uint8_t commandOffset;
+    uint8_t nextCommandOffset;
 
     Processor();
+
+    void reset();
+
+    void load(const char* path);
 
     void step() throw(DecodeException);
 };

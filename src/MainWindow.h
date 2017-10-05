@@ -14,6 +14,9 @@ private:
     void updateUi();
     RegisterWidget* getReg(int reg);
 
+private slots:
+    void on_loadButton_clicked();
+
 public:
     MainWindow();
 };

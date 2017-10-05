@@ -1,5 +1,7 @@
 #include "MainWindow.h"
 
+#include <QFileDialog>
+
 MainWindow::MainWindow() {
     setupUi(this);
 
@@ -27,4 +29,13 @@ void MainWindow::updateUi() {
 RegisterWidget* MainWindow::getReg(int reg) {
     QString name = QString("widgetR%1").arg(reg, 1, 16);
     return findChild<RegisterWidget*>(name);
+}
+
+void MainWindow::on_loadButton_clicked() {
+    QString path = QFileDialog::getOpenFileName(this, "Load memory contents", QString(), "Text files (*.txt);;All files (*.*)");
+    if (path.isNull()) {
+        return;
+    }
+    pro.load(path.toUtf8().data());
+    updateUi();
 }
