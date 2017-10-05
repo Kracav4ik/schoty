@@ -1,5 +1,7 @@
 #include "MainWindow.h"
 
+#include "commands/DivByZeroException.h"
+#include "commands/StopException.h"
 #include <QFileDialog>
 
 MainWindow::MainWindow() {
@@ -73,6 +75,10 @@ void MainWindow::on_stepButton_clicked() {
         pro.step();
     } catch (const DecodeException& e) {
         textOutput->appendPlainText(QString("*** %1\n").arg(e.getMsg()));
+    } catch (const DivByZeroException& e) {
+        textOutput->appendPlainText("Division by zero!\n");
+    } catch (const StopException& e) {
+        textOutput->appendPlainText("STOP command reached!\n");
     }
     updateUi();
 }

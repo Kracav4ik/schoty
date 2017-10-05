@@ -36,5 +36,5 @@ public:
 
     void load(const char* path);
 
-    void step() throw(DecodeException);
+    void step();
 };

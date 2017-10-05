@@ -65,6 +65,8 @@ set(SOURCE_FILES
         commands/CommandXOR.cpp
         commands/CommandXOR.h
         commands/DecodeException.h
+        commands/DivByZeroException.h
+        commands/StopException.h
         IOManager.cpp
         IOManager.h
         )

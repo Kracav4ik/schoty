@@ -8,7 +8,7 @@ Processor::Processor() {
     reset();
 }
 
-void Processor::step() throw(DecodeException) {
+void Processor::step() {
     registersRead.clear();
     registersWrite.clear();
     memoryRead.clear();
