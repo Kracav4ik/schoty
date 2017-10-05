@@ -1,6 +1,7 @@
 #include "CommandOUT.h"
 #include "Processor.h"
+#include "IOManager.h"
 
 void CommandOUT::apply(Processor& pro) {
-    // TODO
+    IOManager::get()->writeOutput(pro.memory[addr]);
 }

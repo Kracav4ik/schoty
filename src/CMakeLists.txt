@@ -56,6 +56,8 @@ set(SOURCE_FILES
         commands/CommandOUT.h
         commands/CommandSET.cpp
         commands/CommandSET.h
+        commands/CommandSTOP.cpp
+        commands/CommandSTOP.h
         commands/CommandSTORE.cpp
         commands/CommandSTORE.h
         commands/CommandSUB.cpp
@@ -63,6 +65,8 @@ set(SOURCE_FILES
         commands/CommandXOR.cpp
         commands/CommandXOR.h
         commands/DecodeException.h
+        IOManager.cpp
+        IOManager.h
         )
 
 add_executable(schoty ${SOURCE_FILES})

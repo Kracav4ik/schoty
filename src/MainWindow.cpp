@@ -10,6 +10,7 @@ MainWindow::MainWindow() {
     }
 
     updateUi();
+    IOManager::set(this);
 
     show();
 }
@@ -38,4 +39,16 @@ void MainWindow::on_loadButton_clicked() {
     }
     pro.load(path.toUtf8().data());
     updateUi();
+}
+
+void MainWindow::writeOutput(int8_t value) {
+    if (value > 0) {
+        char c = value;
+        textOutput->appendPlainText(QString("%1").arg(c));
+    }
+}
+
+int8_t MainWindow::readInput() {
+    // TODO
+    return ' ';
 }

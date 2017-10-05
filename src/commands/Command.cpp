@@ -16,6 +16,7 @@
 #include "commands/CommandOR.h"
 #include "commands/CommandOUT.h"
 #include "commands/CommandSET.h"
+#include "commands/CommandSTOP.h"
 #include "commands/CommandSTORE.h"
 #include "commands/CommandSUB.h"
 #include "commands/CommandXOR.h"
@@ -102,6 +103,9 @@ Command* Command::decode(uint8_t first, uint8_t second) throw(DecodeException) {
         case 10:
             // JLT [R] [addr]
             return new CommandJLT(firstLO, second);
+        case 15:
+            // STOP
+            return new CommandSTOP();
         default:
             throw DecodeException(QString("Unknown opcode %1").arg(op));
     }

@@ -1,6 +1,7 @@
 #include "CommandIN.h"
 #include "Processor.h"
+#include "IOManager.h"
 
 void CommandIN::apply(Processor& pro) {
-    // TODO
+    pro.memory[addr] = IOManager::get()->readInput();
 }

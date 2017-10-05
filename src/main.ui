@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>774</width>
+    <height>532</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,9 +19,15 @@
      <rect>
       <x>20</x>
       <y>30</y>
-      <width>771</width>
-      <height>201</height>
+      <width>731</width>
+      <height>170</height>
      </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>731</width>
+      <height>170</height>
+     </size>
     </property>
     <property name="font">
      <font>
@@ -39,6 +45,9 @@
     <property name="selectionMode">
      <enum>QAbstractItemView::NoSelection</enum>
     </property>
+    <property name="wordWrap">
+     <bool>false</bool>
+    </property>
     <property name="cornerButtonEnabled">
      <bool>false</bool>
     </property>
@@ -51,7 +60,13 @@
     <attribute name="horizontalHeaderDefaultSectionSize">
      <number>22</number>
     </attribute>
+    <attribute name="horizontalHeaderMinimumSectionSize">
+     <number>22</number>
+    </attribute>
     <attribute name="verticalHeaderDefaultSectionSize">
+     <number>18</number>
+    </attribute>
+    <attribute name="verticalHeaderMinimumSectionSize">
      <number>18</number>
     </attribute>
     <row>
@@ -278,188 +293,166 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>210</x>
-      <y>260</y>
-      <width>331</width>
-      <height>261</height>
+      <x>340</x>
+      <y>220</y>
+      <width>201</width>
+      <height>151</height>
      </rect>
     </property>
     <property name="title">
      <string>Registers</string>
     </property>
-    <widget class="RegisterWidget" name="widgetR0">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR4">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>80</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR8">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>140</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetRc">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>200</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR1">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>20</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetRd">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>200</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR9">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>140</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR5">
-     <property name="geometry">
-      <rect>
-       <x>90</x>
-       <y>80</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetRe">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>200</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR3">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>20</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR7">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>80</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetRf">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>200</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR2">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>20</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetRa">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>140</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetRb">
-     <property name="geometry">
-      <rect>
-       <x>250</x>
-       <y>140</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
-    <widget class="RegisterWidget" name="widgetR6">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>80</y>
-       <width>71</width>
-       <height>41</height>
-      </rect>
-     </property>
-    </widget>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="RegisterWidget" name="widgetR0"/>
+     </item>
+     <item row="0" column="1">
+      <widget class="RegisterWidget" name="widgetR1"/>
+     </item>
+     <item row="0" column="2">
+      <widget class="RegisterWidget" name="widgetR2"/>
+     </item>
+     <item row="0" column="3">
+      <widget class="RegisterWidget" name="widgetR3"/>
+     </item>
+     <item row="1" column="0">
+      <widget class="RegisterWidget" name="widgetR4"/>
+     </item>
+     <item row="1" column="1">
+      <widget class="RegisterWidget" name="widgetR5"/>
+     </item>
+     <item row="1" column="2">
+      <widget class="RegisterWidget" name="widgetR6"/>
+     </item>
+     <item row="1" column="3">
+      <widget class="RegisterWidget" name="widgetR7"/>
+     </item>
+     <item row="2" column="0">
+      <widget class="RegisterWidget" name="widgetR8"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="RegisterWidget" name="widgetR9"/>
+     </item>
+     <item row="2" column="2">
+      <widget class="RegisterWidget" name="widgetRa"/>
+     </item>
+     <item row="2" column="3">
+      <widget class="RegisterWidget" name="widgetRb"/>
+     </item>
+     <item row="3" column="0">
+      <widget class="RegisterWidget" name="widgetRc"/>
+     </item>
+     <item row="3" column="1">
+      <widget class="RegisterWidget" name="widgetRd"/>
+     </item>
+     <item row="3" column="2">
+      <widget class="RegisterWidget" name="widgetRe"/>
+     </item>
+     <item row="3" column="3">
+      <widget class="RegisterWidget" name="widgetRf"/>
+     </item>
+    </layout>
    </widget>
    <widget class="QPushButton" name="loadButton">
     <property name="geometry">
      <rect>
-      <x>600</x>
-      <y>300</y>
-      <width>75</width>
+      <x>380</x>
+      <y>390</y>
+      <width>121</width>
       <height>23</height>
      </rect>
     </property>
     <property name="text">
-     <string>Load...</string>
+     <string>Load memory...</string>
     </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="plainTextEdit">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>220</y>
+      <width>201</width>
+      <height>251</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Lucida Console</family>
+      <pointsize>9</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+    <property name="plainText">
+     <string>SET     [1][R] [val]
+LOAD    [2][R] [addr]
+STORE   [3][R] [addr]
+MOV     [4][1] [fromR][toR]
+ADD     [4][2] [fromR][toR]
+SUB     [4][3] [fromR][toR]
+MUL     [4][4] [fromR][toR]
+DIV     [4][5] [fromR][toR]
+AND     [4][6] [fromR][toR]
+OR      [4][7] [fromR][toR]
+XOR     [4][8] [fromR][toR]
+NOT     [4][9] [*][toR]
+IN      [5][1] [addr]
+OUT     [5][2] [addr]
+CMP     [6][R] [aR][bR]
+JMP     [7][*] [addr]
+JZ      [8][R] [addr]
+JGT     [9][R] [addr]
+JLT     [a][R] [addr]
+STOP    [f][*] [*][*]</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="textOutput">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>220</y>
+      <width>311</width>
+      <height>211</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QWidget" name="">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>450</y>
+      <width>311</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Input</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="textInput">
+       <property name="font">
+        <font>
+         <family>Lucida Console</family>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -467,7 +460,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>774</width>
      <height>21</height>
     </rect>
    </property>
