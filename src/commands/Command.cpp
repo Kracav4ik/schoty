@@ -26,13 +26,13 @@ Command* Command::decode(uint8_t first, uint8_t second) throw(DecodeException) {
     switch (op) {
         case 1:
             // SET [R] [value]
-            return new CommandSET();
+            return new CommandSET(firstLO, static_cast<int8_t>(second));
         case 2:
             // LOAD [R] [addr]
-            return new CommandLOAD();
+            return new CommandLOAD(firstLO, second);
         case 3:
             // STORE [R] [addr]
-            return new CommandSTORE();
+            return new CommandSTORE(firstLO, second);
         case 4: {
             // [binop] [fromR] [toR]
             uint8_t binop = firstLO;
@@ -41,31 +41,31 @@ Command* Command::decode(uint8_t first, uint8_t second) throw(DecodeException) {
             switch (binop) {
                 case 1:
                     // MOV [fromR] [toR]
-                    return new CommandMOV();
+                    return new CommandMOV(fromR, toR);
                 case 2:
                     // ADD [fromR] [toR]
-                    return new CommandADD();
+                    return new CommandADD(fromR, toR);
                 case 3:
                     // SUB [fromR] [toR]
-                    return new CommandSUB();
+                    return new CommandSUB(fromR, toR);
                 case 4:
                     // MUL [fromR] [toR]
-                    return new CommandMUL();
+                    return new CommandMUL(fromR, toR);
                 case 5:
                     // DIV [fromR] [toR]
-                    return new CommandDIV();
+                    return new CommandDIV(fromR, toR);
                 case 6:
                     // AND [fromR] [toR]
-                    return new CommandAND();
+                    return new CommandAND(fromR, toR);
                 case 7:
                     // OR [fromR] [toR]
-                    return new CommandOR();
+                    return new CommandOR(fromR, toR);
                 case 8:
                     // XOR [fromR] [toR]
-                    return new CommandXOR();
+                    return new CommandXOR(fromR, toR);
                 case 9:
                     // NOT [unusedR] [toR]
-                    return new CommandNOT();
+                    return new CommandNOT(toR);
                 default:
                     throw DecodeException(QString("Unknown binop %d").arg(binop));
             }
@@ -76,29 +76,32 @@ Command* Command::decode(uint8_t first, uint8_t second) throw(DecodeException) {
             switch (inout) {
                 case 1:
                     // IN [addr]
-                    return new CommandIN();
+                    return new CommandIN(second);
                 case 2:
                     // OUT [addr]
-                    return new CommandOUT();
+                    return new CommandOUT(second);
                 default:
                     throw DecodeException(QString("Invalid IN/OUT mode %1").arg(inout));
             }
         }
-        case 6:
+        case 6: {
             // CMP [outR] [aR] [bR]
-            return new CommandCMP();
+            uint8_t aR = second >> 4;
+            uint8_t bR = second & 0xfu;
+            return new CommandCMP(firstLO, aR, bR);
+        }
         case 7:
             // JMP [unusedR] [addr]
-            return new CommandJMP();
+            return new CommandJMP(second);
         case 8:
             // JZ [R] [addr]
-            return new CommandJZ();
+            return new CommandJZ(firstLO, second);
         case 9:
             // JGT [R] [addr]
-            return new CommandJGT();
+            return new CommandJGT(firstLO, second);
         case 10:
             // JLT [R] [addr]
-            return new CommandJLT();
+            return new CommandJLT(firstLO, second);
         default:
             throw DecodeException(QString("Unknown opcode %1").arg(op));
     }
