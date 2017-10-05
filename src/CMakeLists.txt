@@ -17,6 +17,9 @@ set(SOURCE_FILES
         main.ui
         MainWindow.h
         MainWindow.cpp
+        Processor.cpp
+        Processor.h
+        Command.h
         )
 
 add_executable(schoty ${SOURCE_FILES})
