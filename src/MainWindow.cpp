@@ -44,11 +44,20 @@ void MainWindow::on_loadButton_clicked() {
 void MainWindow::writeOutput(int8_t value) {
     if (value > 0) {
         char c = value;
-        textOutput->appendPlainText(QString("%1").arg(c));
+        textOutput->setPlainText(textOutput->toPlainText() + QString("%1").arg(c));
     }
 }
 
 int8_t MainWindow::readInput() {
     // TODO
     return ' ';
+}
+
+void MainWindow::on_stepButton_clicked() {
+    try {
+        pro.step();
+    } catch (const DecodeException& e) {
+        textOutput->appendPlainText(QString("*** %s\n").arg(e.getMsg()));
+    }
+    updateUi();
 }

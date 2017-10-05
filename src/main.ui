@@ -10,6 +10,12 @@
     <height>532</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>The Schoty Apparatus</string>
   </property>
@@ -293,9 +299,9 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>320</x>
       <y>220</y>
-      <width>201</width>
+      <width>221</width>
       <height>151</height>
      </rect>
     </property>
@@ -358,7 +364,7 @@
      <rect>
       <x>380</x>
       <y>390</y>
-      <width>121</width>
+      <width>111</width>
       <height>23</height>
      </rect>
     </property>
@@ -420,9 +426,25 @@ STOP    [f][*] [*][*]</string>
      <rect>
       <x>20</x>
       <y>220</y>
-      <width>311</width>
+      <width>291</width>
       <height>211</height>
      </rect>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stepButton">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>440</y>
+      <width>111</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Execute step</string>
     </property>
    </widget>
    <widget class="QWidget" name="">
@@ -430,7 +452,7 @@ STOP    [f][*] [*][*]</string>
      <rect>
       <x>20</x>
       <y>450</y>
-      <width>311</width>
+      <width>291</width>
       <height>22</height>
      </rect>
     </property>

@@ -21,6 +21,7 @@ private:
 
 private slots:
     void on_loadButton_clicked();
+    void on_stepButton_clicked();
 
 public:
     MainWindow();
