@@ -9,5 +9,5 @@ public:
     explicit RegisterWidget(QWidget* parent);
 
     void setName(const QString& name);
-    void setValue(uint8_t val);
+    void setValue(uint8_t val, const QColor& color);
 };

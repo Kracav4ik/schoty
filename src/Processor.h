@@ -3,6 +3,7 @@
 #include "commands/DecodeException.h"
 
 #include <cstdint>
+#include <QList>
 
 class Processor {
 public:
@@ -17,6 +18,11 @@ private:
 public:
     uint8_t commandOffset;
     uint8_t nextCommandOffset;
+
+    QList<uint8_t> registersRead;
+    QList<uint8_t> registersWrite;
+    QList<uint8_t> memoryRead;
+    QList<uint8_t> memoryWrite;
 
     Processor();
 
