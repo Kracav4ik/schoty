@@ -20,6 +20,9 @@ set(SOURCE_FILES
         Processor.cpp
         Processor.h
         Command.h
+        RegisterWidget.cpp
+        RegisterWidget.h
+        register.ui
         )
 
 add_executable(schoty ${SOURCE_FILES})

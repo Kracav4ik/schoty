@@ -12,6 +12,7 @@ private:
     Processor pro;
 
     void updateUi();
+    RegisterWidget* getReg(int reg);
 
 public:
     MainWindow();
