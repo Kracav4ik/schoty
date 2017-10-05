@@ -17,16 +17,16 @@ All commands are 2-byte words. Each byte consists of two nibbles. The first nibb
 ### `1` **SET** &mdash; set constant to register
 ### `2` **LOAD** &mdash; load value from memory
 ### `3` **STORE** &mdash; save value to memory
-### `4` Inplace operations X op= Y
+### `4` Inplace operations X = X *op* Y
 #### `41` **MOV** &mdash; assignment: X = Y
 #### `42` **ADD** &mdash; addition: X = X + Y
-#### `43` **SUB** &mdash; subtraction: X = X - Y
+#### `43` **SUB** &mdash; subtraction: X = X &minus; Y
 #### `44` **MUL** &mdash; multiplication: X = X * Y
 #### `45` **DIV** &mdash; division: X = X / Y
 #### `46` **AND** &mdash; bitwise *and*: X = X & Y
 #### `47` **OR** &mdash; bitwise *or*: X = X | Y
 #### `48` **XOR** &mdash; bitwise *xor*: X = X ^ Y
-#### `49` **NOT** &mdash; inversion: X = ~X
+#### `49` **NOT** &mdash; bitwise inversion: X = ~X
 ### `5` IO operations
 #### `51` **IN** &mdash; input character from console
 #### `52` **OUT** &mdash; output character to console
@@ -34,5 +34,5 @@ All commands are 2-byte words. Each byte consists of two nibbles. The first nibb
 ### `7` **JMP** &mdash; unconditional jump
 ### `8` **JZ** &mdash; jump if zero
 ### `9` **JGT** &mdash; jump if greater-than zero
-### `a` **JLT** &mdash; jump if less-then zero
+### `a` **JLT** &mdash; jump if less-than zero
 ### `f` **STOP** &mdash; stop execution
